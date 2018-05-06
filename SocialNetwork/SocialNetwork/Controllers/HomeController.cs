@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialNetwork.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,21 +11,21 @@ namespace SocialNetwork.Controllers
     {
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                
+            }
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return RedirectToAction("Login");
         }
 
-        public ActionResult Contact()
+        public ActionResult Registration()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return RedirectToAction("Registration");
         }
     }
 }
