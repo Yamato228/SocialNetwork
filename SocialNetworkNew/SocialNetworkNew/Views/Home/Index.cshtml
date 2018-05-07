@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home page";
+}
+
+<h2>Добро пожаловать!</h2>
+
+@if (!User.Identity.IsAuthenticated)
+{
+        <button>Войти</button>
+        <button>Зарегистрироваться</button>
+}
